@@ -141,7 +141,7 @@ def main():
     idxs = [int(i) for i in options.indexes.split(',')]
     
     if not len(options.files) == len(seps) == len(idxs) == len(options.headers) == len(regexes):
-        print "number of characters in separators must be equal to indexes, input files [, headers] [, and regular expressions]"
+        print ("number of characters in separators must be equal to indexes, input files [, headers] [, and regular expressions]")
         parser.usage()
     
     acum = 0
