@@ -10,8 +10,6 @@ pip install cross
 Example:
 ```bash
 
-Examples:
-
   - file1:    - file2:
     a,1         b;6
     b,2         d;9
@@ -58,4 +56,39 @@ Examples:
       d   4   YH                                      
       f           6   QW                              
       z                                           99  QQ
+
+      \________/ \_____________________________/  \____/
+         file1                file2                file3
+
+  - file1:          - file2:
+    idx_1,red         22cm,item(55)
+    idx_2,brown       34cm,item(22)
+    idx_3,blue        55cm,item(3)
+    idx_4,yellow      12cm,item(18)
+                      43cm,item(1)
+
+      # treating indexes with regular expressions
+
+      $ cross -f file1 file2 -i 1,2 -s',,' -r ';[0-9]+;[0-9]+'
+      1      red     43cm
+      3      blue    55cm
+
+  - file1:          - file2:
+
+    field1 field2     d 45
+    b 12              a 0        
+    c 14              z 99
+    d 16
+      
+      # ignoring headers (first line) in first file (-hd '10')
+
+      $ cross -f file1 file2 -i 1,1 -s'  ' -hd '10' -u
+      d   16   45
+      b   12
+      c   14
+      a        0
+      z        99
+
+
+
 ```
