@@ -36,7 +36,7 @@ Examples:
       b 2 6
       d 4 9
 
-      # union cross
+      # union cross
 
       $ cross -f file1 file2 -s ',;' -i 1,1 -os ',' -u
       a,1,
@@ -215,3 +215,5 @@ def main():
                     row.extend([options.null]*(acum-len(row)))
                 print (options.setarator_output.join([i]+row))
     
+
+main()
