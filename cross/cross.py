@@ -216,4 +216,5 @@ def main():
                 print (options.setarator_output.join([i]+row))
     
 
-main()
+if __name__=='__main__':
+    main()
